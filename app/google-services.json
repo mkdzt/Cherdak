@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1036579860699",
+    "project_id": "cherdak-7e2ee",
+    "storage_bucket": "cherdak-7e2ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1036579860699:android:28a95a25c3c5fa3dc51cfe",
+        "android_client_info": {
+          "package_name": "com.example.cherdak"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsniUmxpxk1wQ3Ob6rKN0BZlnvwpoeeWg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
