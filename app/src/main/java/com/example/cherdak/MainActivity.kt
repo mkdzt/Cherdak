@@ -16,6 +16,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.example.cherdak.auth.ui.AuthScreen
 import com.example.cherdak.ui.theme.CherdakTheme
 
 class MainActivity : ComponentActivity() {
@@ -29,35 +30,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Counter()
+                    AuthScreen(Modifier.fillMaxSize())
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    CherdakTheme {
-        Greeting("Android")
-    }
-}
-
-@Composable
-fun Counter() {
-    var counter by remember {
-        mutableIntStateOf(0)
-    }
-    Button(onClick = { counter++ }) {
-        Text("$counter")
     }
 }
