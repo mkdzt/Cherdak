@@ -11,11 +11,16 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import com.example.cherdak.auth.domain.User
+import com.example.cherdak.auth.ui.previewProvider.UserPreviewParameterProvider
 
 @Composable
 fun AuthScreen(modifier: Modifier = Modifier) {
-    val email by remember { mutableStateOf("") }
+    val user by remember {
+        mutableStateOf<User>(User("",""))
+    }
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -24,16 +29,25 @@ fun AuthScreen(modifier: Modifier = Modifier) {
     ) {
         EmailField(
             modifier = Modifier
-                .padding(10.dp)
+                .padding(5.dp)
             ,
-            email = email,
-            onNewValue = {"qwe"})
+            email = user.email,
+            onEmailChange = {}
+        )
+        PasswordField(
+            modifier = Modifier
+                .padding(5.dp)
+            ,
+            password = user.password,
+            onPasswordChange = {}
+        )
     }
 }
-@Preview
+@Preview(showBackground = true, device = "id:pixel_6a")
 @Composable
-fun PreviewAuthScreen(modifier: Modifier = Modifier) {
-    val email by remember { mutableStateOf("") }
+fun PreviewAuthScreen(
+    @PreviewParameter(UserPreviewParameterProvider::class) user:User
+) {
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -42,10 +56,16 @@ fun PreviewAuthScreen(modifier: Modifier = Modifier) {
     ) {
         EmailField(
             modifier = Modifier
-                .padding(10.dp)
-            ,
-            email = email,
-            onNewValue = {"qwe"})
+                .padding(5.dp),
+            email = user.email,
+            onEmailChange = {}
+        )
+        PasswordField(
+            modifier = Modifier
+                .padding(5.dp),
+            password = user.password,
+            onPasswordChange = {}
+        )
     }
 }
 
